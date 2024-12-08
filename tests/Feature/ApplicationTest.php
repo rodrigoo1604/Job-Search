@@ -2,19 +2,22 @@
 
 namespace Tests\Feature;
 
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
+use App\Models\Application;
+use Illuminate\Foundation\Testing\WithFaker;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class ApplicationTest extends TestCase
 {
-    /**
-     * A basic feature test example.
-     */
-    public function test_example(): void
-    {
+    use RefreshDatabase;
+
+    public function test_ListOfEntryCanBeRead(){
+        $this->withoutExceptionHandling();
+
+        Application::all();
+
         $response = $this->get('/');
 
-        $response->assertStatus(200);
+        $response->assertStatus(200)->assertViewIs('home');
     }
 }

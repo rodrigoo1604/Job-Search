@@ -20,17 +20,23 @@ class ApplicationController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    /*public function create()
     {
         //
-    }
+    }*/
 
     /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
     {
-        //
+        $application = Application::create([
+            'companyName' => $request->companyName,
+            'details' => $request->details,
+            'finalised' => $request->finalised
+        ]);
+        $application->save();
+        return response()->json($application, 200);
     }
 
     /**
@@ -38,30 +44,39 @@ class ApplicationController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $application = Application::find($id);
+        return response()->json($application, 200);
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    /*public function edit(string $id)
     {
         //
-    }
+    }*/
 
     /**
      * Update the specified resource in storage.
      */
     public function update(Request $request, string $id)
     {
-        //
-    }
+        $application = Application::find($id);
 
+        $application -> update([
+            'companyName' => $request->companyName,
+            'details' => $request->details,
+            'finalised' => $request->finalised
+        ]);
+        $application->save();
+        return response()->json($application, 200);
+    }
     /**
      * Remove the specified resource from storage.
      */
     public function destroy(string $id)
     {
-        //
+        $application = Application::find($id);
+        $application->delete();
     }
 }
