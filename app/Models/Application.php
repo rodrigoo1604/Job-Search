@@ -14,4 +14,9 @@ class Application extends Model
         'details',
         'finalised',
     ];
+
+    //too many with follow
+    public function follows(){
+        return $this->hasMany(Follow::class);
+    }
 }
