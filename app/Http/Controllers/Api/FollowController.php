@@ -11,18 +11,18 @@ class FollowController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(string $id)
     {
-        //
+        return response()->json(Application::find($id)->follow, 200);
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    /*public function create()
     {
         //
-    }
+    }*/
 
     /**
      * Store a newly created resource in storage.
@@ -60,32 +60,39 @@ class FollowController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(string $applicationId, string $newsId)
     {
-        //
+        return response()->json(Application::find($applicationId)->follow[(int)$newsId - 1],200);
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    /*public function edit(string $id)
     {
         //
-    }
+    }*/
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, string $applicationId, string $newsId)
     {
-        //
+        $follow = Application::find($applicationId)->follow[(int)$newsId - 1];
+
+        $follow->update([
+            'applications_id' => $request-> applications_id,
+            'news' => $request->news,
+        ]);
+
+        return response()->json($follow, 200);
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(string $applicationId, string $newsId)
     {
-        //
+        Application::find($applicationId)->follow[(int)$newsId-1]->delete();
     }
 }
