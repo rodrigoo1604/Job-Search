@@ -80,7 +80,7 @@ class ApplicationTest extends TestCase
         ]);
         $data = ['companyName' => 'Arelance',
             'details' => 'CEO of the company.',
-            'finalised' => true];
+            'finalised' => 1];
         $response = $this->get(route('apishow', 1));
         $response->assertStatus(200)
                 ->assertJsonCount(6)

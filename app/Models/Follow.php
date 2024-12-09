@@ -3,11 +3,14 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Follow extends Model
 {
+    use HasFactory;
+
     protected $fillable =[
-        'applications_id',
+        'application_id',
         'news',
     ];
 

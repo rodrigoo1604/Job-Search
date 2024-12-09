@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Models\Follow;
 use App\Models\Application;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -11,9 +12,9 @@ class FollowController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(string $id)
+    public function index(string $applicationId)
     {
-        return response()->json(Application::find($id)->follow, 200);
+        return response()->json(Application::find($applicationId)->follows, 200);
     }
 
     /**
@@ -27,34 +28,13 @@ class FollowController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request, $applicationId)
+    public function store(Request $request, string $applicationId)
     {
-        //
-        $validated = $request->validate([
-            'news' => 'required|array'
+        $follow = Follow::create([
+            'application_id' => (int)$applicationId,
+            'news' => $request->news,
         ]);
-
-        $application = Application::find($applicationId);
-
-        if(!$application){
-            return response()->json([
-                'message' => 'The application where follow is requested does not exist'
-            ],404);
-        }
-
-        $followsData = collect($validated['news'])->map(function ($newsItem) use ($application) {
-            return [
-                'application_id' => $application->id,
-                'news' => $newsItem,
-            ];
-        });
-
-        $application->follows()->createMany($followsData);
-
-        return response()->json([
-            'message' => 'News added successfully',
-            'application' => $application->load('follows'),
-        ]);
+        return response()->json($follow, 200);
     }
 
     /**
@@ -62,7 +42,7 @@ class FollowController extends Controller
      */
     public function show(string $applicationId, string $newsId)
     {
-        return response()->json(Application::find($applicationId)->follow[(int)$newsId - 1],200);
+        return response()->json(Application::find($applicationId)->follows[(int)$newsId - 1],200);
     }
 
     /**
@@ -78,10 +58,10 @@ class FollowController extends Controller
      */
     public function update(Request $request, string $applicationId, string $newsId)
     {
-        $follow = Application::find($applicationId)->follow[(int)$newsId - 1];
+        $follow = Application::find($applicationId)->follows[(int)$newsId - 1];
 
         $follow->update([
-            'applications_id' => $request-> applications_id,
+            'application_id' => $request-> applications_id,
             'news' => $request->news,
         ]);
 
@@ -93,6 +73,6 @@ class FollowController extends Controller
      */
     public function destroy(string $applicationId, string $newsId)
     {
-        Application::find($applicationId)->follow[(int)$newsId-1]->delete();
+        Application::find($applicationId)->follows[(int)$newsId - 1]->delete();
     }
 }

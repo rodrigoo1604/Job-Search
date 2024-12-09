@@ -17,7 +17,9 @@ class ApplicationFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'companyName' => $this->faker->company(),
+            'details' => $this->faker->realText($maxNbChars = 200),
+            'finalised' => $this->faker->boolean(),
         ];
     }
 }
