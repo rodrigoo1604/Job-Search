@@ -20,7 +20,7 @@
                     <td>{{ $application->companyName}}</td>
                     <td>{{ $application->details}}</td>
                     <td>{{ $application->finalised ? 'Finalised' : 'In Progress' }}</td>
-                    <td>
+                    <td><a href="{{route('show',$application->id)}}">
                         <ul>
                             @forelse ($application->follows as $follow)
                                 <li>{{ $follow->news }}</li>
@@ -28,6 +28,7 @@
                                 <li>No following yet</li>
                             @endforelse
                         </ul>
+                    </a>
                     </td>
                 </tr>
             @endforeach

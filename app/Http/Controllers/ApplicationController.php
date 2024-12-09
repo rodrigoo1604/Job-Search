@@ -36,9 +36,11 @@ class ApplicationController extends Controller
     /**
      * Display the specified resource.
      */
-    /*public function show(string $id)
+    public function show(string $id)
     {
-        //
+        $application = Application::find($id);
+
+        return view ('show', compact('application'));
     }
 
     /**
