@@ -1,66 +1,119 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+## 💼 Job Search 
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+This project consists of a view where you can see all your job applications in a table, through an api you can also create new ones, delete them, update them and even see one in specific.
+
+In the website there is also a link where you can track the follow-up of each application, even creating new ones, delete them, update them and seeing one in specific.
+
+The project was an introduction to table relationships, in this case we used a 1 to many relation.
+
+## 👁️ Views  
+This is the main view:
+
+![image_720](https://github.com/user-attachments/assets/3bb416ae-2179-4179-8e19-9af376463de8)
+
+This is an application follow-up view
+
+![image_720](https://github.com/user-attachments/assets/a4cf42b3-614f-4845-a0bf-b46fc6dbee38)
+
+
+## 💻 Languages ​​and tools used  
+
+Project coding:
+
+![](https://skillicons.dev/icons?i=php,html,css)
+![](https://skillicons.dev/icons?i=laravel,git,github,vscode,)
+
+Presentation:
+
+<p>
+<img src="https://static.vecteezy.com/system/resources/previews/032/329/175/non_2x/canva-icon-logo-symbol-free-png.png" alt="Incono azul de Canvas" width="50" style="margin-right: 3px"/>
 </p>
 
-## About Laravel
+## ⚙️ Installation prerequisites
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+🟢Install [Node.js](https://nodejs.org/en/download/source-code)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+🟢Install [Composer](https://getcomposer.org/download/)
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## 🛞 Installation Guide 
 
-## Learning Laravel
+-1: Before installing the project, you have to create a database, in my case i have used mysql with xampp as host.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+-2: Open the terminal and paste this command:
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+`git clone https://github.com/rodrigoo1604/Job-Search.git`
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+⚠️ Be careful, you have to be in the folder you want this project cloned at!
 
-## Laravel Sponsors
+-3: After you have cloned the repository, rename the file `.env.example` to `.env` and adjust the database configuration to yours.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
 
-### Premium Partners
+-4: Last but not least, open three terminals in bash and execute the following commands
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+▷Console 1:
+    `npm install` and after `npm run dev`
+    
+▷Console 2:
+    `composer install` and after `php artisan serve`
+    
+▷Console 3: 
+    `php artisan migrat:fresh` and after `php artisan migrat:fresh --seed`
+    
+-And that should be it, just open the browser and insert the url the server has provided you
 
-## Contributing
+⚠️ If you have done the previous steps and something has gone wrong please go back to the third command console and insert this:
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+`php artisan key:generate` and after `php artisan config:cache` 
 
-## Code of Conduct
+## 🌐 Endpoints 
+Ten endpoints have been generated in total, each five related to each table.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### For the first table:
 
-## Security Vulnerabilities
+📖 Read (GET)
+`/api/applications`
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+✏️ Create (POST)
+`/api/applications`
 
-## License
+💱 Update (PUT)
+`/api/applications/{id}`
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+❌ Destroy (DELETE)
+`/api/applications/{id}`
+
+👁️ Show (GET)
+`/api/applications/{id}`
+
+### For the second table
+
+📖 Read (GET)
+`/api/applications/{application_id}/news`
+
+✏️ Create (POST)
+`/api/applications/{application_id}/news`
+
+💱 Update (PUT)
+`/api/applications/{application_id}/news/{follow-up_id}`
+
+❌ Destroy (DELETE)
+`/api/applications/{application_id}/news/{follow-up_id}`
+
+👁️ Show (GET)
+`/api/applications/{application_id}/news/{follow-up_id}`
+
+## 🧑‍🔬 Tests 
+All tests have passed ;) , insert `php artisan test --coverage` or `php artisan test --coverage-html=coverage-report` in the console to check them
+
+![image_720](https://github.com/user-attachments/assets/f8a8149c-9989-4de1-b3fe-21ac275a8383)
+
+
+## 🗂️ DDBB Diagram 
+For the correct structuring of the database, as this was the first time we have worked with related tables, it is crucial to have a diagram of the DDBB. I have made it with DrawSQL: https://drawsql.app/teams/rodrigo-35/diagrams/job-search
+
+![image](https://github.com/user-attachments/assets/5e78a65e-e711-4da3-9bec-cb49791a035a)
+
+
+## 🙍‍♂️ About me 
+Hello, i am a student in a backend and AWS bootcamp.
+- [Github Profile](https://github.com/rodrigoo1604)
