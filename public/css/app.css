@@ -1,0 +1,170 @@
+body {
+    background-color: #F5F5F5;
+    color: #333;
+    font-family: Arial, sans-serif;
+}
+
+.application, .tableApplication {
+    background-color: #FFFFFF;
+    border: 1px solid #E0E0E0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 80%;
+}
+
+.application h2, .table th {
+    background-color: #1E88E5;
+    color: #FFFFFF;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.table th, .table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #E0E0E0;
+}
+
+.table tr:nth-child(even) {
+    background-color: #F5F5F5;
+}
+
+.table tr:hover {
+    background-color: #E0E0E0;
+}
+
+.table td a {
+    color: #1E88E5;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.table td a:hover {
+    text-decoration: underline;
+}
+
+.applicationContent p {
+    background-color: #F9F9F9;
+    border: 1px solid #E0E0E0;
+    border-radius: 5px;
+    padding: 15px;
+    line-height: 1.6;
+    color: #333;
+    margin-top: 20px;
+}
+
+.status-finalised::before {
+    content: '●';
+    color: #4CAF50;
+    margin-right: 5px;
+}
+
+.status-inprogress::before {
+    content: '●';
+    color: #FB8C00;
+    margin-right: 5px;
+}
+
+.table th {
+    font-size: 16px;
+}
+
+.table td {
+    font-size: 14px;
+}
+
+.applicationTime table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #FFFFFF;
+    border: 1px solid #E0E0E0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.applicationTime th {
+    color: #000000;
+    font-size: 16px;
+    text-transform: uppercase;
+    padding: 10px;
+    text-align: left;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.applicationTime td {
+    font-size: 14px;
+    color: #333;
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #E0E0E0;
+}
+
+.applicationTime tr:nth-child(even) {
+    background-color: #F5F5F5;
+}
+
+.applicationTime tr:hover {
+    background-color: #E0E0E0;
+}
+
+.applicationTime td:last-child {
+    font-style: italic;
+    color: #666;
+}
+.header {
+    background-color: #1E88E5;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header-content h1 {
+    margin: 0;
+    font-size: 36px;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.footer {
+    background-color: #1E88E5;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.footer-content p {
+    margin: 5px 0;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+}
+
+.github-link {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.github-link:hover {
+    text-decoration: underline;
+}
+
+.github-link i {
+    margin-right: 8px;
+}
