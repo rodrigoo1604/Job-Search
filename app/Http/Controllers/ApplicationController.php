@@ -39,7 +39,7 @@ class ApplicationController extends Controller
     public function show(string $id)
     {
         $application = Application::find($id);
-
+        if  ($application)
         return view ('show', compact('application'));
     }
 

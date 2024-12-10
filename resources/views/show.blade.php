@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
     <div class="application">
-        <h2 class="application->follows">Job Application Follow-up</h2>
+        <h2 class="application->follow">Job Application Follow-up</h2>
         <div class="applicationTime">
             <table>
                 <thead>
@@ -12,7 +12,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($application->follows as $news)
+                    @foreach ($application->follow as $news)
                     <tr>
                         <td>{{ $news->created_at }}</td>
                         <td>{{ $news->updated_at }}</td>
