@@ -12,7 +12,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($application->follow as $news)
+                    @foreach ($application->follows as $news)
                     <tr>
                         <td>{{ $news->created_at }}</td>
                         <td>{{ $news->updated_at }}</td>
