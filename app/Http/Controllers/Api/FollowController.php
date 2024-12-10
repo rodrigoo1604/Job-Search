@@ -61,7 +61,7 @@ class FollowController extends Controller
         $follow = Application::find($applicationId)->follows[(int)$newsId - 1];
 
         $follow->update([
-            'application_id' => $request-> applications_id,
+            'application_id' => $request-> application_id,
             'news' => $request->news,
         ]);
 
