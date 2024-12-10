@@ -1,14 +1,14 @@
 @extends('layouts.app')
 @section('content')
     <div class="application">
-        <h2 class="application->follows">Entry</h2>
+        <h2 class="application->follows">Job Application Follow-up</h2>
         <div class="applicationTime">
             <table>
                 <thead>
                     <tr>
                         <th scope="col">Created</th>
                         <th scope="col">Updated</th>
-                        <th scope="col">Comments</th>
+                        <th scope="col">Details</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -21,10 +21,6 @@
                     @endforeach
                 </tbody>
             </table>
-            
-        </div>
-        <div class="applicationContent">
-            <p class="applicationEntry">{{$application['entry']}}</p>
         </div>
     </div>
 @endsection

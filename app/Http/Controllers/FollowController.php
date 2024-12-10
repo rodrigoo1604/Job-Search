@@ -10,7 +10,7 @@ class FollowController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    /*public function index()
     {
         //
     }
@@ -18,7 +18,7 @@ class FollowController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    /*public function create()
     {
         //
     }
@@ -26,7 +26,7 @@ class FollowController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    /*public function store(Request $request)
     {
         //
     }
@@ -34,7 +34,7 @@ class FollowController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Follow $follow)
+    /*public function show(Follow $follow)
     {
         //
     }
@@ -42,7 +42,7 @@ class FollowController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Follow $follow)
+    /*public function edit(Follow $follow)
     {
         //
     }
@@ -50,7 +50,7 @@ class FollowController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Follow $follow)
+    /*public function update(Request $request, Follow $follow)
     {
         //
     }
@@ -58,8 +58,8 @@ class FollowController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Follow $follow)
+    /*public function destroy(Follow $follow)
     {
         //
-    }
+    }*/
 }

@@ -35,44 +35,10 @@ body {
     border-bottom: 1px solid #E0E0E0;
 }
 
-.table tr:nth-child(even) {
-    background-color: #F5F5F5;
-}
-
-.table tr:hover {
-    background-color: #E0E0E0;
-}
-
 .table td a {
     color: #1E88E5;
     text-decoration: none;
     font-weight: bold;
-}
-
-.table td a:hover {
-    text-decoration: underline;
-}
-
-.applicationContent p {
-    background-color: #F9F9F9;
-    border: 1px solid #E0E0E0;
-    border-radius: 5px;
-    padding: 15px;
-    line-height: 1.6;
-    color: #333;
-    margin-top: 20px;
-}
-
-.status-finalised::before {
-    content: '●';
-    color: #4CAF50;
-    margin-right: 5px;
-}
-
-.status-inprogress::before {
-    content: '●';
-    color: #FB8C00;
-    margin-right: 5px;
 }
 
 .table th {
@@ -99,8 +65,6 @@ body {
     text-transform: uppercase;
     padding: 10px;
     text-align: left;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
 }
 
 .applicationTime td {
@@ -121,7 +85,6 @@ body {
 
 .applicationTime td:last-child {
     font-style: italic;
-    color: #666;
 }
 .header {
     background-color: #1E88E5;
@@ -167,4 +130,12 @@ body {
 
 .github-link i {
     margin-right: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #FFFFFF;
+}
+
+tr:hover {
+    background-color: #961010;
 }
